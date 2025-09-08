@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuateRiegos 2.0 - Release 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .menu {
+            background-color: #2c3e50;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .upload-form {
+            margin-top: 20px;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="/">Inicio</a>
+        <a href="#cargar">Cargar Archivo</a>
+        <a href="#ayuda">Ayuda</a>
+    </div>
+
+    <div class="container">
+        <h1>GuateRiegos 2.0</h1>
+        <h2>Release 1: Interfaz Base y Carga de Archivo</h2>
+        
+        <p>Bienvenido al sistema de optimización de riego robótico.</p>
+        <p>En este primer release, puedes cargar el archivo de configuración XML.</p>
+
+        <div id="cargar" class="upload-form">
+            <h3>Cargar Archivo de Configuración (entrada.xml)</h3>
+            <form method="POST" action="/cargar" enctype="multipart/form-data">
+                <input type="file" name="archivo" accept=".xml" required>
+                <button type="submit">Cargar Archivo</button>
+            </form>
+            {% if mensaje %}
+                <p class="success">{{ mensaje }}</p>
+            {% endif %}
+        </div>
+
+        <div id="ayuda" style="margin-top: 40px;">
+            <h3>Ayuda</h3>
+            <p><strong>Estudiante:</strong> [Tu Nombre Completo]</p>
+            <p><strong>Carnet:</strong> [Tu Número de Carnet]</p>
+            <p>Este es el Release 1 del Proyecto 2 de IPC2.</p>
+        </div>
+    </div>
+</body>
+</html>
