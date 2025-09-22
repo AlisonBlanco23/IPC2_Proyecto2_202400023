@@ -27,22 +27,6 @@ class ListaEnlazada:
             actual = actual.obtener_siguiente()
         return actual.obtener_dato()
 
-    def eliminar(self, dato):
-        if self.es_vacia():
-            return False
-        if self.cabeza.obtener_dato() == dato:
-            self.cabeza = self.cabeza.obtener_siguiente()
-            self.tamanio -= 1
-            return True
-        actual = self.cabeza
-        while actual.obtener_siguiente() is not None:
-            if actual.obtener_siguiente().obtener_dato() == dato:
-                actual.asignar_siguiente(actual.obtener_siguiente().obtener_siguiente())
-                self.tamanio -= 1
-                return True
-            actual = actual.obtener_siguiente()
-        return False
-
     def longitud(self):
         return self.tamanio
 
@@ -51,7 +35,3 @@ class ListaEnlazada:
         while actual is not None:
             yield actual.obtener_dato()
             actual = actual.obtener_siguiente()
-
-    def __str__(self):
-        elementos = [str(dato) for dato in self.iterar()]
-        return "[" + ", ".join(elementos) + "]"

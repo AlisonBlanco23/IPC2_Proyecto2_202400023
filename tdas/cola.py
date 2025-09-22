@@ -24,6 +24,3 @@ class Cola:
         if self.esta_vacia():
             return None
         return self.lista.obtener(0)
-
-    def __str__(self):
-        return str(self.lista)
