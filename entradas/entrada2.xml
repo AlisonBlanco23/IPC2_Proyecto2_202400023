@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuracion>
+  <listaDrones>
+    <dron id="1" nombre="DR01"/>
+    <dron id="2" nombre="DR02"/>
+  </listaDrones>
+
+  <listaInvernaderos>
+    <invernadero nombre="Invernadero Prueba">
+      <numeroHileras>2</numeroHileras>
+      <plantasXhilera>3</plantasXhilera>
+      
+      <listaPlantas>
+        <planta hilera="1" posicion="1" litrosAgua="2" gramosFertilizante="50">Rosa</planta>
+        <planta hilera="1" posicion="2" litrosAgua="3" gramosFertilizante="100">Orquídea</planta>
+        <planta hilera="1" posicion="3" litrosAgua="1" gramosFertilizante="30">Lavanda</planta>
+        <planta hilera="2" posicion="1" litrosAgua="4" gramosFertilizante="80">Girasol</planta>
+        <planta hilera="2" posicion="2" litrosAgua="2" gramosFertilizante="60">Margarita</planta>
+        <planta hilera="2" posicion="3" litrosAgua="3" gramosFertilizante="90">Clavel</planta>
+      </listaPlantas>
+
+      <asignacionDrones>
+        <dron id="1" hilera="1"/>
+        <dron id="2" hilera="2"/>
+      </asignacionDrones>
+
+      <planesRiego>
+        <plan nombre="Plan A">H1-P2, H2-P1, H1-P3</plan>
+      </planesRiego>
+    </invernadero>
+  </listaInvernaderos>
+</configuracion>

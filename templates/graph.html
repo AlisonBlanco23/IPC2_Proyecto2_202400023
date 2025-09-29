@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafo en t={{ tiempo_t }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f9ff; }
+        footer { 
+            margin-top: 40px; 
+            padding: 20px; 
+            background: #1976d2; 
+            color: white; 
+            text-align: center; 
+            border-radius: 10px 10px 0 0; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/">GuateRiegos 2.0</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/ayuda">
+                    <button class="btn btn-sm btn-outline-light">❓ Ayuda</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 text-center">
+        <h1 class="mb-4">Estado de TDAs en tiempo t = {{ tiempo_t }}</h1>
+        <img src="/output/tda_graph_t={{ tiempo_t }}.png" alt="Grafo" class="img-fluid border rounded shadow" style="max-height: 700px; object-fit: contain;">
+        <div class="mt-4">
+            <a href="/reporte" class="btn btn-primary">← Volver al Reporte</a>
+        </div>
+    </div>
+
+    <footer class="text-white text-center py-3 mt-5">
+        <p>© 2025 - Proyecto 2 - IPC2 | Carnet: 202400023</p>
+    </footer>
+</body>
+</html>

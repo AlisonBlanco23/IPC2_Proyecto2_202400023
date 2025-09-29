@@ -1,37 +1,41 @@
-from .nodo import Nodo
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato
+        self.siguiente = None
 
-class ListaEnlazada:
+
+class Lista:
     def __init__(self):
         self.cabeza = None
         self.tamanio = 0
 
-    def es_vacia(self):
+    def esta_vacia(self):
         return self.cabeza is None
 
     def agregar(self, dato):
         nuevo_nodo = Nodo(dato)
-        if self.es_vacia():
+        if self.esta_vacia():
             self.cabeza = nuevo_nodo
         else:
             actual = self.cabeza
-            while actual.obtener_siguiente() is not None:
-                actual = actual.obtener_siguiente()
-            actual.asignar_siguiente(nuevo_nodo)
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nuevo_nodo
         self.tamanio += 1
 
     def obtener(self, indice):
         if indice < 0 or indice >= self.tamanio:
             raise IndexError("Índice fuera de rango")
         actual = self.cabeza
-        for i in range(indice):
-            actual = actual.obtener_siguiente()
-        return actual.obtener_dato()
+        for _ in range(indice):
+            actual = actual.siguiente
+        return actual.dato
 
-    def longitud(self):
+    def obtener_tamanio(self):
         return self.tamanio
 
-    def iterar(self):
+    def __iter__(self):
         actual = self.cabeza
         while actual is not None:
-            yield actual.obtener_dato()
-            actual = actual.obtener_siguiente()
+            yield actual.dato
+            actual = actual.siguiente
